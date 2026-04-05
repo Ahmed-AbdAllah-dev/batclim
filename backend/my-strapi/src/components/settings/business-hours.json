@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_settings_business_hours",
+  "info": {
+    "displayName": "Business Hours"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "string",
+      "required": true
+    },
+    "hours": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

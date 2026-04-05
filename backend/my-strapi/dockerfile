@@ -1,0 +1,23 @@
+FROM node:20-bullseye-slim
+
+WORKDIR /srv/app
+
+RUN apt-get update && apt-get install -y \
+    python3 \
+    g++ \
+    make \
+    libvips-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Use npm since you have package-lock.json
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 1337
+
+CMD ["npm", "run", "start"]

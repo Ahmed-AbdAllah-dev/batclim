@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  strapi:
+    image: batclim_cms_image:latest
+    container_name: batclim_cms
+    restart: unless-stopped
+    env_file:
+      - ./backend/my-strapi/.env
+    volumes:
+      - ./backend/my-strapi/data:/srv/app/.tmp
+      - ./backend/my-strapi/uploads:/srv/app/public/uploads
+    ports:
+      - "1337:1337"
+
+  frontend:
+    image: my-frontend:latest
+    container_name: batclim_frontend
+    restart: unless-stopped
+    env_file:
+      - ./frontend/.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - strapi

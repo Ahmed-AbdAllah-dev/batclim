@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: batclim-strapi
+    env: node
+    region: frankfurt  # choose region closest to you
+    plan: free
+    rootDir: backend/my-strapi
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000        # Render assigns this port automatically
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_URL
+        sync: false         # Set this manually in the Render dashboard (secret)
+      - key: DATABASE_SSL
+        value: "true"
+      - key: DATABASE_SSL_REJECT_UNAUTHORIZED
+        value: "false"
+      - key: APP_KEYS
+        sync: false         # Set manually in dashboard
+      - key: API_TOKEN_SALT
+        sync: false
+      - key: ADMIN_JWT_SECRET
+        sync: false
+      - key: TRANSFER_TOKEN_SALT
+        sync: false
+      - key: JWT_SECRET
+        sync: false

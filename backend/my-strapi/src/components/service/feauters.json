@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_service_feauters",
+  "info": {
+    "displayName": "feauters"
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

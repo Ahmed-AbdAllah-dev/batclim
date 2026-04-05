@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_home_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ctaPrimaryText": {
+      "type": "string",
+      "required": true
+    },
+    "ctaPrimaryLink": {
+      "type": "string",
+      "default": "#contact",
+      "required": true
+    },
+    "ctaSecondaryText": {
+      "type": "string"
+    },
+    "ctaSecondaryLink": {
+      "type": "string",
+      "default": "#contact"
+    },
+    "Trust": {
+      "type": "component",
+      "component": "home.trust-indicator",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

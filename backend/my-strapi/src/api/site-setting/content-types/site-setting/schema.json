@@ -1,0 +1,62 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "site-settings",
+    "displayName": "Site Setting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string"
+    },
+    "companyDescription": {
+      "type": "text",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contactEmail": {
+      "type": "email",
+      "required": true
+    },
+    "contactPhone": {
+      "type": "string",
+      "required": true
+    },
+    "emergencyPhone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "Hours": {
+      "type": "component",
+      "component": "settings.business-hours",
+      "repeatable": true
+    },
+    "SocialLinks": {
+      "type": "component",
+      "component": "settings.social-link",
+      "repeatable": true
+    },
+    "FooterLinks": {
+      "type": "component",
+      "component": "settings.footer-link",
+      "repeatable": true
+    }
+  }
+}
