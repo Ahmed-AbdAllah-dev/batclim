@@ -2,17 +2,17 @@
 const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL ;
 
 console.log('Strapi API URL:', API_URL); // This will help debug
-var mutex = 0;
+
 // Helper to fetch data from Strapi
 export async function fetchStrapi<T>(path: string): Promise<T> {
   const url = `${API_URL}/api${path}`;
   console.log('Fetching from:', url); // This will help debug
-  const hasSeenWarning = localStorage.getItem('hasSeenRenderWarning');
+  const hasSeenWarning = sessionStorage.getItem('hasSeenRenderWarning');
   const controller = new AbortController();
   const id = setTimeout(() => controller.abort(), 90000);
   if(!hasSeenWarning){
   alert("The server is waking up! This may take up to 90 seconds.");
-  localStorage.setItem('hasSeenRenderWarning','true');
+  sessionStorage.setItem('hasSeenRenderWarning','true');
   }
   const response = await fetch(url, {
     next: { revalidate: 60 },// ISR: revalidate every 60 seconds
