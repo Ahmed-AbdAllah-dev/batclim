@@ -2,7 +2,7 @@
 const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL ;
 
 console.log('Strapi API URL:', API_URL); // This will help debug
-var mutex = 0;
+
 // Helper to fetch data from Strapi
 export async function fetchStrapi<T>(path: string): Promise<T> {
   const url = `${API_URL}/api${path}`;
